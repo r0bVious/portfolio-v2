@@ -13,6 +13,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        dvh: "100dvh",
+      },
+      minHeight: {
+        "screen-50": "50dvh",
+      },
       colors: {
         customBlack: "#131313",
         customBronze: "#AD7E38",

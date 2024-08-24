@@ -23,7 +23,7 @@ const TopNav = () => {
 
   return (
     <>
-      <nav className="absolute top-0 z-40 w-full bg-customBlue flex justify-between min-h-10 items-center font-extrabold">
+      <nav className="relative w-full bg-customBlue flex justify-between min-h-10 items-center font-extrabold">
         <ul className="flex justify-evenly w-full">
           <li>
             <button className="hover:text-customBlack" onClick={toggleModal}>
@@ -43,7 +43,7 @@ const TopNav = () => {
           </li>
         </ul>
         <button
-          className="flex lg:fixed lg:bottom-5 lg:right-5 lg:m-0 mr-2 w-24 rounded-lg overflow-hidden"
+          className="flex lg:fixed lg:bottom-5 lg:right-5 lg:m-0 mr-2 w-24 rounded-lg overflow-hidden z-50"
           onClick={changeLanguage}
           type="button"
         >

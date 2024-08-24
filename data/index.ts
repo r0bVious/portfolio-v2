@@ -3,20 +3,19 @@ export const heroPhotos = [
     id: 1,
     img: "media/pics/2-transparent.png",
     imgAlt: "Rob in a suit",
-    imgClassName: "lg:mx-8 lg:mt-24 object-cover",
+    imgClassName: "self-end pt-3 lg:pt-0",
   },
   {
     id: 2,
     img: "media/pics/3-transparent.png",
     imgAlt: "Rob in a sweater",
-    imgClassName:
-      "object-cover scale-150 object-top mt-28 lg:scale-125 lg:mt-36",
+    imgClassName: "transform scale-[1.30] translate-y-[30%]",
   },
   {
     id: 3,
     img: "media/pics/7-transparent.png",
     imgAlt: "Rob in a jacket",
-    imgClassName: "object-cover scale-150 object-top lg:mt-36 mt-52",
+    imgClassName: "transform scale-[1.25] translate-y-[25%]",
   },
 ];
 

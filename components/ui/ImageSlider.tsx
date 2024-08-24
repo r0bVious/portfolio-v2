@@ -19,24 +19,24 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   containerClassName = "",
   delay = 5000,
 }: ImageSliderProps) => {
-  let [currentPic, setCurrentPic] = useState(0);
+  let [currentPic, setCurrentPic] = useState(1);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentPic((prevPic) => (prevPic + 1) % pics.length);
-  //   }, delay);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentPic((prevPic) => (prevPic + 1) % pics.length);
+    }, delay);
 
-  //   return () => clearInterval(intervalId);
-  // }, [pics.length]);
+    return () => clearInterval(intervalId);
+  }, [pics.length]);
 
   return (
     <div
-      className={`flex justify-center items-center overflow-hidden lg:h-full min-w-[50%] ${containerClassName}`}
+      className={`min-w-[50%] min-h-screen-50 flex items-center overflow-hidden ${containerClassName}`}
     >
       <img
         src={pics[currentPic].img}
         alt={pics[currentPic].imgAlt}
-        className={`h-full w-full ${pics[currentPic].imgClassName}`}
+        className={`object-contain ${pics[currentPic].imgClassName}`}
       />
     </div>
   );
