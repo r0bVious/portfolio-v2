@@ -3,7 +3,7 @@ export const heroPhotos = [
     id: 1,
     img: "media/pics/2-transparent.png",
     imgAlt: "Rob in a suit",
-    imgClassName: "object-cover lg:mx-8 lg:mt-24",
+    imgClassName: "lg:mx-8 lg:mt-24 object-cover",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const heroPhotos = [
     id: 3,
     img: "media/pics/7-transparent.png",
     imgAlt: "Rob in a jacket",
-    imgClassName: "object-cover scale-150 object-top mt-28 lg:mt-36",
+    imgClassName: "object-cover scale-150 object-top lg:mt-36 mt-52",
   },
 ];
 
