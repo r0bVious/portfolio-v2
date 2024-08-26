@@ -9,13 +9,15 @@ export const heroPhotos = [
     id: 2,
     img: "media/pics/3-transparent.png",
     imgAlt: "Rob in a sweater",
-    imgClassName: "transform scale-[1.30] translate-y-[30%]",
+    imgClassName:
+      "transform scale-[1.30] translate-y-[10%] lg:translate-y-[30%]",
   },
   {
     id: 3,
     img: "media/pics/7-transparent.png",
     imgAlt: "Rob in a jacket",
-    imgClassName: "transform scale-[1.25] translate-y-[25%]",
+    imgClassName:
+      "transform scale-[1.25] translate-y-[10%] lg:translate-y-[25%]",
   },
 ];
 
@@ -79,7 +81,7 @@ export const projects = [
     img: "/media/projects/SeoulNights.gif",
     iconLists: ["HTML5.svg", "CSS3.svg", "Javascript.svg", "PHP.svg"],
     gitLink: "https://github.com/ironllama/seoulnights",
-    demoLink: "",
+    demoLink: "https://youtu.be/JCzcRSJPxWA",
     date: "2024-01-24",
   },
   {
@@ -119,8 +121,8 @@ export const projects = [
     img: "/media/projects/portfolio.png",
 
     iconLists: ["Typescript.svg", "Nextjs.svg", "TailwindCSS.svg"],
-    gitLink: "",
-    demoLink: "",
+    gitLink: "https://github.com/r0bVious/portfolio-v2",
+    demoLink: "https://robertjspano.com/",
     date: "2024-07-15",
   },
 ];

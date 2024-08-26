@@ -80,16 +80,19 @@ const Projects = () => {
           }) => (
             <div
               key={id}
-              className={`cursor-pointer bg-blend-darken bg-cover bg-top lg:bg-center overflow-hidden relative w-[95%] lg:w-[20rem] lg:h-[30rem] lg:max-h-full flex flex-col justify-between transition-all ease-in-out duration-300 border border-customGranite ${
-                clickedProjectID === id
-                  ? "lg:scale-125 z-10 bg-black/80"
-                  : "project-size bg-black/60"
+              className={`relative cursor-pointer bg-cover bg-top lg:bg-center overflow-hidden w-[95%] lg:w-[20rem] lg:h-[30rem] lg:max-h-full flex flex-col justify-between transition-all ease-in-out duration-300 border border-customGranite ${
+                clickedProjectID === id ? "lg:scale-125 z-10" : "project-size"
               }`}
               onClick={() => handleClick(id)}
               style={{ backgroundImage: `url(${img})` }}
             >
+              <div
+                className={`absolute inset-0 bg-black transition-colors duration-300 ${
+                  clickedProjectID === id ? "bg-opacity-80" : "bg-opacity-60"
+                }`}
+              ></div>
               <h1
-                className={`${
+                className={`relative z-10 ${
                   rubik.className
                 } font-extrabold lg:absolute lg:transform lg:-rotate-90 lg:origin-top-left lg:-translate-y-1/3 lg:-bottom-10 lg:left-0 lg:tracking-[0.3rem] m-2 whitespace-nowrap ${
                   clickedProjectID === id
@@ -99,11 +102,11 @@ const Projects = () => {
               >
                 {title}
               </h1>
-              <span className="text-right font-mono tracking-wide mr-2">
+              <span className="relative z-10 text-right font-mono tracking-wide mr-2">
                 ...{timeDifference(date)}
               </span>
               {clickedProjectID === id ? (
-                <div className="flex flex-col justify-evenly h-full">
+                <div className="relative z-10 flex flex-col justify-evenly h-full">
                   <div className="">
                     <p className="indent-5 lg:text-xs p-2 font-bold">
                       {description}
@@ -137,7 +140,7 @@ const Projects = () => {
                   </div>
                 </div>
               ) : null}
-              <div className="flex justify-end mb-1">
+              <div className="relative z-10 flex justify-end mb-1">
                 <span
                   className={`text-end self-end text-[0.5rem] ${
                     clickedProjectID === id ? "inline" : "hidden"

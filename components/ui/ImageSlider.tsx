@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Spinner from "./Spinner";
 
 type HeroPhoto = {
   id: number;
@@ -19,24 +20,25 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   containerClassName = "",
   delay = 5000,
 }: ImageSliderProps) => {
-  let [currentPic, setCurrentPic] = useState(1);
+  let [currentPic, setCurrentPic] = useState<null | number>(null);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentPic((prevPic) => (prevPic + 1) % pics.length);
-    }, delay);
-
-    return () => clearInterval(intervalId);
+    let picNum = Math.floor(Math.random() * 3);
+    setCurrentPic(picNum);
   }, [pics.length]);
+
+  if (currentPic === null) {
+    return <Spinner />;
+  }
 
   return (
     <div
-      className={`min-w-[50%] min-h-screen-50 flex items-center overflow-hidden ${containerClassName}`}
+      className={`lg:max-w-[50%] flex items-center overflow-hidden flex-shrink-0 ${containerClassName}`}
     >
       <img
         src={pics[currentPic].img}
         alt={pics[currentPic].imgAlt}
-        className={`object-contain ${pics[currentPic].imgClassName}`}
+        className={`object-contain object-top ${pics[currentPic].imgClassName}`}
       />
     </div>
   );

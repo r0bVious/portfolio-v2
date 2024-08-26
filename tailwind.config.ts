@@ -13,6 +13,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        "spin-slow": "spin 2s linear infinite",
+        "spin-slower": "spin 2.5s linear infinite",
+      },
       height: {
         dvh: "100dvh",
       },

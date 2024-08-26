@@ -23,7 +23,10 @@ const Footer = () => {
           연락해주세요!
         </p>
         <div className="flex flex-col justify-between items-center gap-5">
-          <button className="p-[3px] relative w-96" onClick={copyEmail}>
+          <button
+            className="p-[3px] relative w-full lg:w-96"
+            onClick={copyEmail}
+          >
             <div className="absolute inset-0 bg-customBlue rounded-lg" />
             <div className="px-8 py-5 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent flex justify-center items-center gap-3">
               <p lang="en">
