@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { projects } from "@/data";
 import { Rubik } from "next/font/google";
 import { FaGithub, FaBolt } from "react-icons/fa";
+import "./ui/tooltip.css";
+import { Tooltip } from "react-tippy";
+import { Project } from "next/dist/build/swc";
 
 const rubik = Rubik({
   weight: ["400", "500"],
@@ -10,8 +13,13 @@ const rubik = Rubik({
   variable: "--font-rubik",
 });
 
-const Projects = () => {
+type ProjectsProps = {
+  language: string;
+};
+
+const Projects: React.FC<ProjectsProps> = ({ language }) => {
   const [clickedProjectID, setClickedProjectID] = useState<number | null>(null);
+
   const handleClick = (id: number) => {
     if (clickedProjectID === id) {
       setClickedProjectID(null);
@@ -59,119 +67,154 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="lg:h-screen py-20 border-y-2 border-customBlue border-dotted bg-gradient-to-b from-customBlue/[0.2] via-customBlack to-customBlue/[0.2] "
+      className={`w-screen py-20 border-y-2 border-customBlue border-dotted bg-gradient-to-b from-customBlue/[0.2] via-customBlack to-customBlue/[0.2] ${rubik.className}`}
     >
       <h1 className="text-center">
         some of my <span className="text-customBlue">project timeline</span>
       </h1>
-      <div className="flex flex-col lg:flex-row items-center justify-evenly mt-10 lg:max-h-[40rem] w-full gap-2">
-        <p className="m-5">2023-10</p>
-        {projects.map(
-          ({
-            id,
-            title,
-            description,
-            img,
-            iconLists,
-            gitLink,
-            demoLink,
-            skills,
-            date,
-          }) => (
-            <div
-              key={id}
-              className={`relative cursor-pointer bg-cover bg-top lg:bg-center overflow-hidden w-[95%] lg:w-[20rem] lg:h-[30rem] lg:max-h-full flex flex-col justify-between transition-all ease-in-out duration-300 border border-customGranite ${
-                clickedProjectID === id ? "lg:scale-125 z-10" : "project-size"
-              }`}
-              onClick={() => handleClick(id)}
-              style={{ backgroundImage: `url(${img})` }}
-            >
-              <div
-                className={`absolute inset-0 bg-black transition-colors duration-300 ${
-                  clickedProjectID === id ? "bg-opacity-80" : "bg-opacity-60"
-                }`}
-              ></div>
-              <h1
-                className={`relative z-10 ${
-                  rubik.className
-                } font-extrabold lg:absolute lg:transform lg:-rotate-90 lg:origin-top-left lg:-translate-y-1/3 lg:-bottom-10 lg:left-0 lg:tracking-[0.3rem] m-2 whitespace-nowrap ${
-                  clickedProjectID === id
-                    ? "lg:opacity-10 lg:transition-all lg:text-4xl"
-                    : "lg:text-2xl"
-                }`}
-              >
-                {title}
-              </h1>
-              <span className="relative z-10 text-right font-mono tracking-wide mr-2">
-                ...{timeDifference(date)}
-              </span>
-              {clickedProjectID === id ? (
-                <div className="relative z-10 flex flex-col justify-evenly h-full">
-                  <div className="">
-                    <p className="indent-5 lg:text-xs p-2 font-bold">
-                      {description}
-                    </p>
+      <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center lg:gap-y-20 px-5 lg:pt-5">
+        <div className="relative arrowhead min-w-[10%] flex justify-center mt-10 lg:m-0">
+          <p lang="en">Present</p>
+          <p lang="ko" className="none whitespace-nowrap">
+            현재
+          </p>
+        </div>
+        {projects
+          .slice()
+          .reverse()
+          .map(
+            ({
+              id,
+              title,
+              description,
+              img,
+              iconLists,
+              gitLink,
+              demoLink,
+              skills,
+              date,
+            }) => (
+              <div className="project-container flex justify-center items-center w-full lg:w-auto h-full lg:px-14 pt-10 lg:p-0">
+                <div
+                  key={id}
+                  className={`relative rounded cursor-pointer bg-cover bg-top lg:bg-center overflow-hidden lg:w-[20rem] w-full min-h-32 lg:h-[30rem] lg:max-h-full flex flex-col justify-between transition-all ease-in-out duration-300 border-2 border-customGranite ${
+                    clickedProjectID === id ? "lg:scale-125 z-10" : null
+                  }`}
+                  onClick={() => handleClick(id)}
+                  style={{ backgroundImage: `url(${img})` }}
+                >
+                  <div
+                    className={`absolute inset-0 bg-black transition-colors duration-300 ${
+                      clickedProjectID === id
+                        ? "bg-opacity-90"
+                        : "bg-opacity-75"
+                    }`}
+                  ></div>
+                  <div className="z-10 flex lg:flex-col justify-between lg:mx-2">
+                    <h1 className="lg:text-3xl text-lg font-extrabold underline-offset-4 underline">
+                      {title}
+                    </h1>
+                    <span className="self-end font-mono font-extralight tracking-widest lg:text-sm text-xs">
+                      ...{timeDifference(date)}
+                    </span>
                   </div>
-                  <ul className="p-2 rounded-lg list-disc lg:text-xs">
-                    <h2 className="text-sm">Skills Learned:</h2>
-                    {skills.map((skill, index) => (
-                      <li className="ml-10" key={index}>
-                        {skill}
-                      </li>
+                  {clickedProjectID === id ? (
+                    <div className="relative z-10 flex flex-col justify-evenly h-full">
+                      <div className="indent-5 lg:text-sm px-2 lg:font-bold pt-5 lg:pt-0">
+                        <p
+                          lang="en"
+                          className={`${language === "en" ? "none" : null}`}
+                        >
+                          {description.eng}
+                        </p>
+                        <p
+                          lang="ko"
+                          className={`${language === "en" ? null : "none"}`}
+                        >
+                          {description.kor}
+                        </p>
+                      </div>
+                      <ul
+                        lang="en"
+                        className={`p-2 rounded-lg list-disc lg:text-xs ${
+                          language === "en" ? "none" : null
+                        }`}
+                      >
+                        <h2 className="text-sm">Skills Learned:</h2>
+                        {skills.eng.map((skill, index) => (
+                          <li className="ml-10" key={index}>
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
+                      <ul
+                        lang="ko"
+                        className={`p-2 rounded-lg list-disc lg:text-xs ${
+                          language === "en" ? null : "none"
+                        }`}
+                      >
+                        {skills.kor.map((skill, index) => (
+                          <li className="ml-10" key={index}>
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex justify-evenly text-xs w-full z-10 gap-10 px-10">
+                        <a
+                          href={gitLink}
+                          target="_blank"
+                          className="relative bg-customBlack border border-customBlue hover:bg-customBlue rounded lg:h-16 lg:w-24 w-full h-20 flex justify-center items-center overflow-hidden"
+                        >
+                          Github
+                          <FaGithub className="absolute lg:size-14 size-32 mt-2 lg:ml-8 ml-12 opacity-20" />
+                        </a>
+                        <a
+                          href={demoLink}
+                          target="_blank"
+                          className="relative bg-customBlack border border-customBlue hover:bg-customBlue rounded lg:h-16 lg:w-24 w-full h-20 flex justify-center items-center overflow-hidden"
+                        >
+                          Demo
+                          <FaBolt className="absolute lg:size-14 size-32 mt-5 lg:ml-12 ml-16 opacity-20" />
+                        </a>
+                      </div>
+                    </div>
+                  ) : null}
+                  <div className="relative z-10 flex justify-end mb-1">
+                    <span
+                      className={`text-end self-end text-[0.5rem] ${
+                        clickedProjectID === id ? "inline" : "hidden"
+                      }`}
+                    >
+                      powered by
+                    </span>
+                    {iconLists.map((icon, index) => (
+                      <Tooltip
+                        title={icon.replace(".svg", "")}
+                        position="bottom"
+                        trigger="mouseenter"
+                        animation="scale"
+                        arrow={true}
+                        arrowSize="big"
+                      >
+                        <div
+                          key={index}
+                          className="border border-white/[0.2] rounded-full bg-black size-10 flex justify-center items-center"
+                        >
+                          <img
+                            src={`/media/logos/${icon}`}
+                            alt={icon}
+                            className="p-2"
+                          />
+                        </div>
+                      </Tooltip>
                     ))}
-                  </ul>
-                  <div className="lg:p-0 p-12 lg:gap-0 gap-5 flex flex-row justify-evenly text-xs w-full z-10">
-                    <a
-                      href={gitLink}
-                      target="_blank"
-                      className="relative bg-customBlack border border-customBlue hover:bg-customBlue font-bold rounded lg:h-12 lg:w-20 w-full h-24 flex justify-center items-center overflow-hidden"
-                    >
-                      Github
-                      <FaGithub className="absolute lg:size-14 size-32 mt-2 lg:ml-8 ml-12 opacity-20" />
-                    </a>
-                    <a
-                      href={demoLink}
-                      target="_blank"
-                      className="relative bg-customBlack border border-customBlue hover:bg-customBlue font-bold rounded lg:h-12 lg:w-20 w-full h-24 flex justify-center items-center overflow-hidden"
-                    >
-                      Demo
-                      <FaBolt className="absolute lg:size-14 size-32 mt-5 lg:ml-12 ml-16 opacity-20" />
-                    </a>
                   </div>
                 </div>
-              ) : null}
-              <div className="relative z-10 flex justify-end mb-1">
-                <span
-                  className={`text-end self-end text-[0.5rem] ${
-                    clickedProjectID === id ? "inline" : "hidden"
-                  }`}
-                >
-                  powered by
-                </span>
-                {iconLists.map((icon, index) => (
-                  <div
-                    key={index}
-                    className="border border-white/[0.2] rounded-full bg-black lg:size-8 size-10 flex justify-center items-center"
-                    title={icon.replace(".svg", "")}
-                  >
-                    <img
-                      src={`/media/logos/${icon}`}
-                      alt={icon}
-                      className="p-2"
-                    />
-                  </div>
-                ))}
               </div>
-            </div>
-          )
-        )}
-        <div className="m-5 w-28 flex justify-center">
-          <span lang="en" className="">
-            Present
-          </span>
-          <span lang="ko" className="none whitespace-nowrap">
-            현재
-          </span>
+            )
+          )}
+        <div className="tail relative min-w-[10%] text-center mt-8 lg:m-0">
+          <p>2023-10</p>
         </div>
       </div>
     </section>
