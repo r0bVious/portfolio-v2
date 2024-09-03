@@ -49,7 +49,7 @@ export const TypewriterEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope} className="inline">
+      <motion.div ref={scope} className="inline-flex flex-wrap gap-3">
         {wordsArray.map((word, idx) => {
           return (
             <div key={`word-${idx}`} className="inline-block">
@@ -62,7 +62,6 @@ export const TypewriterEffect = ({
                   {char}
                 </motion.span>
               ))}
-              &nbsp;
             </div>
           );
         })}
@@ -86,7 +85,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block w-[4px] h-3 bg-customGranite",
+          "inline-block w-[3px] h-3 lg:h-4 bg-customGranite ml-1",
           cursorClassName
         )}
       ></motion.span>
