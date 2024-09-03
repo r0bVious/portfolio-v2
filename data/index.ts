@@ -107,7 +107,7 @@ export const projects = [
     img: "/media/projects/SeoulNights.gif",
     iconLists: ["HTML5.svg", "CSS3.svg", "Javascript.svg", "PHP.svg"],
     gitLink: "https://github.com/ironllama/seoulnights",
-    demoLink: "https://youtu.be/JCzcRSJPxWA",
+    demoLink: "https://robertjspano.com/seoulnights",
     date: "2024-01-24",
   },
   {
