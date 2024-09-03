@@ -67,9 +67,9 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
   return (
     <section
       id="projects"
-      className={`w-screen py-20 border-y-2 border-customBlue border-dotted bg-gradient-to-b from-customBlue/[0.2] via-customBlack to-customBlue/[0.2] ${rubik.className}`}
+      className={`w-screen border-y-2 py-10 border-customBlue border-dotted bg-gradient-to-b from-customBlue/[0.2] via-customBlack to-customBlue/[0.2] ${rubik.className}`}
     >
-      <h1 className="text-center">
+      <h1 className="text-center lg:pb-5">
         some of my <span className="text-customBlue">project timeline</span>
       </h1>
       <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center lg:gap-y-20 px-5 lg:pt-5">
