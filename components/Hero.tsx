@@ -74,6 +74,7 @@ const Hero = () => {
             <p className="none" lang="ko">
               개발에 필요한
               <span className="text-2xl text-customBlue font-extrabold">
+                {" "}
                 React, Next.js, Chakra UI
               </span>{" "}
               및

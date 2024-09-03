@@ -69,8 +69,11 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
       id="projects"
       className={`w-screen border-y-2 py-10 border-customBlue border-dotted bg-gradient-to-b from-customBlue/[0.2] via-customBlack to-customBlue/[0.2] ${rubik.className}`}
     >
-      <h1 className="text-center lg:pb-5">
+      <h1 lang="en" className="text-center lg:pb-5">
         some of my <span className="text-customBlue">project timeline</span>
+      </h1>
+      <h1 lang="ko" className="none text-center lg:pb-5">
+        개발 프로젝트 <span className="text-customBlue">성장과정</span>
       </h1>
       <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center lg:gap-y-20 px-5 lg:pt-5">
         <div className="relative arrowhead min-w-[10%] flex justify-center mt-10 lg:m-0">
@@ -94,9 +97,11 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
               skills,
               date,
             }) => (
-              <div className="project-container flex justify-center items-center w-full lg:w-auto h-full lg:px-14 pt-10 lg:p-0">
+              <div
+                key={id}
+                className="project-container flex justify-center items-center w-full lg:w-auto h-full lg:px-14 pt-10 lg:p-0"
+              >
                 <div
-                  key={id}
                   className={`relative rounded cursor-pointer bg-cover bg-top lg:bg-center overflow-hidden lg:w-[20rem] w-full min-h-32 lg:h-[30rem] lg:max-h-full flex flex-col justify-between transition-all ease-in-out duration-300 border-2 border-customGranite ${
                     clickedProjectID === id ? "lg:scale-125 z-10" : null
                   }`}
@@ -195,11 +200,9 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                         animation="scale"
                         arrow={true}
                         arrowSize="big"
+                        key={index}
                       >
-                        <div
-                          key={index}
-                          className="border border-white/[0.2] rounded-full bg-black size-10 flex justify-center items-center"
-                        >
+                        <div className="border border-white/[0.2] rounded-full bg-black size-10 flex justify-center items-center">
                           <img
                             src={`/media/logos/${icon}`}
                             alt={icon}

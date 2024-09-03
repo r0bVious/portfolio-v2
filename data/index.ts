@@ -98,7 +98,7 @@ export const projects = [
       ],
       kor: [
         "팀 개발",
-        "개발 민첩성",
+        "상황 적응력",
         "코드 리팩토링",
         "코드 통합",
         "데이터 구조",
@@ -158,7 +158,7 @@ export const projects = [
         "Content Data Organization",
         "Design Scalability",
       ],
-      kor: ["컴포넌트 추상화", "콘텐츠 데이터 조직", "디자인 확장성"],
+      kor: ["컴포넌트 추상화", "콘텐츠 데이터 조직", "효율적인 업무설계 능력"],
     },
     img: "/media/projects/portfolio.png",
     iconLists: ["Typescript.svg", "Nextjs.svg", "TailwindCSS.svg"],
