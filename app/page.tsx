@@ -5,8 +5,6 @@ import Footer from "@/components/Footer";
 import TopNav from "@/components/TopNav";
 import { useState } from "react";
 
-type language = {};
-
 export default function Home() {
   const [language, setLanguage] = useState<string>("");
 

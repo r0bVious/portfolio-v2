@@ -3,14 +3,15 @@ export const heroPhotos = [
     id: 1,
     img: "media/pics/2-transparent.png",
     imgAlt: "Rob in a suit",
-    imgClassName: "self-end pt-3 lg:pt-0",
+    imgClassName:
+      "self-end pt-3 lg:pt-0 transform scale-[1.5] origin-bottom lg:transform-none",
   },
   {
     id: 2,
     img: "media/pics/3-transparent.png",
     imgAlt: "Rob in a sweater",
     imgClassName:
-      "transform scale-[1.30] translate-y-[10%] lg:translate-y-[30%]",
+      "transform scale-[1.8] translate-y-[35%] lg:translate-y-[25%] lg:scale-[1.3]",
   },
   {
     id: 3,

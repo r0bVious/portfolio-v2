@@ -42,8 +42,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   return (
     <div
-      className={`relative lg:max-w-[50%] flex items-center justify-center overflow-hidden flex-shrink-0 ${containerClassName}`}
-      style={{ minHeight: "400px" }}
+      className={`relative lg:w-[50%] flex items-center justify-center overflow-hidden ${containerClassName}`}
+      style={{ minHeight: "600px" }}
     >
       {!isImageLoaded && (
         <div className="absolute inset-0 flex items-center justify-center">
