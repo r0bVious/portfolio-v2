@@ -42,15 +42,20 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   return (
     <div
-      className={`lg:w-[50%] flex items-center overflow-hidden flex-shrink-0 ${containerClassName}`}
+      className={`relative lg:max-w-[50%] flex items-center justify-center overflow-hidden flex-shrink-0 ${containerClassName}`}
+      style={{ minHeight: "400px" }}
     >
-      {!isImageLoaded && <Spinner />}
+      {!isImageLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Spinner />
+        </div>
+      )}
       <img
         src={pics[currentPic].img}
         alt={pics[currentPic].imgAlt}
-        className={`object-contain object-top ${
+        className={`object-contain object-top transition-opacity duration-500 ${
           pics[currentPic].imgClassName
-        } ${isImageLoaded ? "visible" : "invisible"}`}
+        } ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
         onLoad={handleImageLoad}
       />
     </div>
