@@ -54,7 +54,7 @@ const Hero = () => {
               experience in a Seoul start-up!
             </p>
             <p className="none" lang="ko">
-              저는 서울에서 스타트업에서 국내 및 국제{" "}
+              저는 서울 스타트업에서 국내 및 국제{" "}
               <span className="text-customBlue">마케팅</span> 경력을 갖고 있는
               신입 <span className="text-customBlue">개발자</span>입니다!
             </p>
