@@ -37,8 +37,8 @@ const Hero = () => {
   ];
 
   return (
-    <section className="w-full h-screen overflow-hidden">
-      <HeroHighlight className="max-h-screen flex lg:flex-row flex-col justify-between">
+    <section className="w-full overflow-hidden">
+      <HeroHighlight className="h-dvh flex lg:flex-row flex-col justify-between">
         <div className="lg:h-full flex flex-col justify-center align-middle px-1 lg:px-10 text-center lg:text-left lg:gap-8 gap-4 pt-4 lg:pt-0 lg:max-w-[50%] flex-grow">
           <div className="lg:text-3xl text-2xl">
             <h1 lang="en">Hello, I&apos;m Rob.</h1>
