@@ -42,7 +42,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   return (
     <div
-      className={`lg:max-w-[50%] flex items-center overflow-hidden flex-shrink-0 ${containerClassName}`}
+      className={`lg:w-[50%] flex items-center overflow-hidden flex-shrink-0 ${containerClassName}`}
     >
       {!isImageLoaded && <Spinner />}
       <img
