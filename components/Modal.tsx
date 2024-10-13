@@ -32,32 +32,26 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         onClick={onClose}
       >
         <div
-          className="border-2 border-customBlue border-dotted lg:mx-0 mx-5"
+          className="border-2 border-customBlue border-dotted lg:h-[75%] h-[60%] w-[90%] mx-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <HeroHighlight className="flex flex-col justify-center items-center py-10 px-5">
-            <h1>Which style do you prefer?</h1>
-            <div className="flex justify-evenly items-center p-10 gap-10">
+          <HeroHighlight className="flex flex-col justify-center items-center h-full w-full">
+            <h1 className="text-lg lg:text-2xl my-5">
+              Which style do you prefer?
+            </h1>
+            <div className="flex flex-col lg:flex-row justify-evenly items-center w-full h-full lg:py-10 py-5 gap-5">
               <a
                 href="media/Robert J Spano 2024 Standard CV.pdf"
                 target="_blank"
-                className="inline-block"
-              >
-                <img
-                  src="/media/standardcvimg.png"
-                  className="lg:h-80 object-cover object-top"
-                />
-              </a>
+                className="h-full max-h-full flex justify-center w-full lg:w-1/2 bg-center bg-no-repeat bg-contain"
+                style={{ backgroundImage: "url('/media/standardcvimg.png')" }}
+              />
               <a
                 href="media/Robert J Spano 2024 Visual CV.pdf"
                 target="_blank"
-                className="inline-block"
-              >
-                <img
-                  src="/media/visualcvimg.png"
-                  className="lg:h-80 object-cover object-top"
-                />
-              </a>
+                className="h-full max-h-full flex justify-center w-full lg:w-1/2 bg-center bg-no-repeat bg-contain"
+                style={{ backgroundImage: "url('/media/visualcvimg.png')" }}
+              />
             </div>
           </HeroHighlight>
         </div>
@@ -65,4 +59,5 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     </>
   );
 };
+
 export default Modal;

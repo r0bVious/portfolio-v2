@@ -21,11 +21,20 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   delay = 5000,
 }: ImageSliderProps) => {
   let [currentPic, setCurrentPic] = useState<null | number>(null);
+  let [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
-    let picNum = Math.floor(Math.random() * 3);
+    let picNum = Math.floor(Math.random() * pics.length);
     setCurrentPic(picNum);
   }, [pics.length]);
+
+  useEffect(() => {
+    setIsImageLoaded(false);
+  }, [currentPic]);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
 
   if (currentPic === null) {
     return <Spinner />;
@@ -33,12 +42,21 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   return (
     <div
-      className={`lg:max-w-[50%] flex items-center overflow-hidden flex-shrink-0 ${containerClassName}`}
+      className={`relative lg:max-w-[50%] flex items-center justify-center overflow-hidden flex-shrink-0 ${containerClassName}`}
+      style={{ minHeight: "400px" }}
     >
+      {!isImageLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Spinner />
+        </div>
+      )}
       <img
         src={pics[currentPic].img}
         alt={pics[currentPic].imgAlt}
-        className={`object-contain object-top ${pics[currentPic].imgClassName}`}
+        className={`object-contain object-top transition-opacity duration-500 ${
+          pics[currentPic].imgClassName
+        } ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
+        onLoad={handleImageLoad}
       />
     </div>
   );

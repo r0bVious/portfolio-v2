@@ -2,7 +2,12 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-const TopNav = () => {
+type TopNavProps = {
+  language: string;
+  setLanguage: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const TopNav: React.FC<TopNavProps> = ({ language, setLanguage }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -19,14 +24,18 @@ const TopNav = () => {
       elem.classList.toggle("grayscale");
       elem.classList.toggle("lg:opacity-50");
     });
+    language === "en" ? setLanguage("ko") : setLanguage("en");
   };
 
   return (
     <>
-      <nav className="relative w-full bg-customBlue flex justify-between min-h-10 items-center font-extrabold">
+      <nav className="sticky top-0 lg:relative w-full bg-customBlue flex justify-between min-h-10 items-center font-extrabold z-50">
         <ul className="flex justify-evenly w-full">
           <li>
-            <button className="hover:text-customBlack" onClick={toggleModal}>
+            <button
+              className="hover:text-customBlack transition-colors duration-200"
+              onClick={toggleModal}
+            >
               <p lang="en">-Get Resume-</p>
               <p lang="ko" className="none">
                 -이력서-
