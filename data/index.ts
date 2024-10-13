@@ -22,27 +22,27 @@ export const heroPhotos = [
 ];
 
 export const projects = [
-  {
-    id: 1,
-    title: "frogCoin",
-    description: {
-      eng: "frogCoin was my first attempt at using pure HTML and CSS to create a site with the typical sections. I had challenged myself to try to make it somewhat of a treat to view despite my limited skillset at the time.",
-      kor: "frogCoin은 순수 HTML과 CSS를 사용하여 부분적으로 나뉜 사이트를 만드는 첫 번째 도전이였습니다. 해당 작업을 만들 시 경험이 많지 않아 제한된 기술을 이용하여 작업하였음에도 불구하고 재밌는 요소를 넣어서 만들기 위한 즐거운운 도전이었습니다.",
-    },
-    skills: {
-      eng: [
-        "Responsive design basics",
-        "Mobile-First development",
-        "CSS animation",
-      ],
-      kor: ["반응형 디자인 기초", "모바일 중심 개발", "CSS 애니메이션"],
-    },
-    img: "/media/projects/frogCoin.png",
-    iconLists: ["HTML5.svg", "CSS3.svg"],
-    gitLink: "https://github.com/r0bVious/frogCoin",
-    demoLink: "https://r0bvious.github.io/frogCoin/",
-    date: "2023-11-25",
-  },
+  // {
+  //   id: 1,
+  //   title: "frogCoin",
+  //   description: {
+  //     eng: "frogCoin was my first attempt at using pure HTML and CSS to create a site with the typical sections. I had challenged myself to try to make it somewhat of a treat to view despite my limited skillset at the time.",
+  //     kor: "frogCoin은 순수 HTML과 CSS를 사용하여 부분적으로 나뉜 사이트를 만드는 첫 번째 도전이였습니다. 해당 작업을 만들 시 경험이 많지 않아 제한된 기술을 이용하여 작업하였음에도 불구하고 재밌는 요소를 넣어서 만들기 위한 즐거운운 도전이었습니다.",
+  //   },
+  //   skills: {
+  //     eng: [
+  //       "Responsive design basics",
+  //       "Mobile-First development",
+  //       "CSS animation",
+  //     ],
+  //     kor: ["반응형 디자인 기초", "모바일 중심 개발", "CSS 애니메이션"],
+  //   },
+  //   img: "/media/projects/frogCoin.png",
+  //   iconLists: ["HTML5.svg", "CSS3.svg"],
+  //   gitLink: "https://github.com/r0bVious/frogCoin",
+  //   demoLink: "https://r0bvious.github.io/frogCoin/",
+  //   date: "2023-11-25",
+  // },
   {
     id: 2,
     title: "Tic-Tac-Toe",
@@ -165,6 +165,33 @@ export const projects = [
     gitLink: "https://github.com/r0bVious/portfolio-v2",
     demoLink: "https://robertjspano.com/",
     date: "2024-07-15",
+  },
+  {
+    id: 7,
+    title: "Tap-Tap-Taphouse",
+    description: {
+      eng: "Created in 10 days for the ReactJam gamejam. This was a great chance for me to hone some front-end skills.",
+      kor: "ReactJam 게임잼을 위해 10일 만에 제작되었습니다. 이번 기회는 제게 프론트엔드 기술을 연마할 수 있는 좋은 기회였습니다.",
+    },
+    skills: {
+      eng: [
+        "Development with strict deadlines",
+        "React state manipulation",
+        "Prop handling",
+        "useContext and useRef",
+      ],
+      kor: [
+        "엄격한 마감일이 있는 개발,",
+        "리액트 스테이트 통제",
+        "prop 통제",
+        "useContext 및 useRef",
+      ],
+    },
+    img: "/media/projects/taptaptaphouse.png",
+    iconLists: ["Typescript.svg", "React.svg"],
+    gitLink: "https://github.com/r0bVious/reactjam-taptaptaphouse",
+    demoLink: "https://robertjspano.com/taptaptaphouse",
+    date: "2024-10-07",
   },
 ];
 
