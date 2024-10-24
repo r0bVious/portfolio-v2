@@ -170,8 +170,8 @@ export const projects = [
     id: 7,
     title: "Tap-Tap-Taphouse",
     description: {
-      eng: "Created in 10 days for the ReactJam gamejam. This was a great chance for me to hone some front-end skills.",
-      kor: "ReactJam 게임잼을 위해 10일 만에 제작되었습니다. 이번 기회는 제게 프론트엔드 기술을 연마할 수 있는 좋은 기회였습니다.",
+      eng: "Created in less than 10 days for the [ReactJam](https://www.reactjam.com/) gamejam - and proudly won the 3rd place prize! This was a great chance for me to hone some front-end skills. Check out the [winners page](https://www.reactjam.com/winners)!",
+      kor: "[ReactJam](https://www.reactjam.com/) 게임잼을 위해 열흘도 채 되지 않는 시간동안 만들었으며 자랑스럽게 3등을 수상하였습니다! 이번 기회는 제게 프런트엔드 기술을 연마할 수 있는 좋은 기회였습니다. [수상자의 페이지](https://www.reactjam.com/winners) 확인해보세요! ",
     },
     skills: {
       eng: [

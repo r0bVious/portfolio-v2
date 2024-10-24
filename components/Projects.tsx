@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { projects } from "@/data";
 import { Rubik } from "next/font/google";
 import { FaGithub, FaBolt } from "react-icons/fa";
@@ -130,13 +131,49 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                           lang="en"
                           className={`${language === "en" ? "none" : null}`}
                         >
-                          {description.eng}
+                          <ReactMarkdown
+                            components={{
+                              a: ({ node, ...props }) => (
+                                <a
+                                  {...props}
+                                  style={{
+                                    color: "#3F65E3",
+                                    textDecoration: "underline",
+                                  }}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {props.children}
+                                </a>
+                              ),
+                            }}
+                          >
+                            {description.eng}
+                          </ReactMarkdown>
                         </p>
                         <p
                           lang="ko"
                           className={`${language === "en" ? null : "none"}`}
                         >
-                          {description.kor}
+                          <ReactMarkdown
+                            components={{
+                              a: ({ node, ...props }) => (
+                                <a
+                                  {...props}
+                                  style={{
+                                    color: "#3F65E3",
+                                    textDecoration: "underline",
+                                  }}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {props.children}
+                                </a>
+                              ),
+                            }}
+                          >
+                            {description.kor}
+                          </ReactMarkdown>
                         </p>
                       </div>
                       <ul
