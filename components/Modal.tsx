@@ -44,13 +44,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 href="media/Robert J Spano 2024 Standard CV.pdf"
                 target="_blank"
                 className="h-full max-h-full flex justify-center w-full lg:w-1/2 bg-center bg-no-repeat bg-contain"
-                style={{ backgroundImage: "url('/media/standardcvimg.png')" }}
+                style={{ backgroundImage: "url('media/standardcvimg.png')" }}
               />
               <a
                 href="media/Robert J Spano 2024 Visual CV.pdf"
                 target="_blank"
                 className="h-full max-h-full flex justify-center w-full lg:w-1/2 bg-center bg-no-repeat bg-contain"
-                style={{ backgroundImage: "url('/media/visualcvimg.png')" }}
+                style={{ backgroundImage: "url('media/visualcvimg.png')" }}
               />
             </div>
           </HeroHighlight>
