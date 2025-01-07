@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           <p className="md:text-base text-sm md:font-normal font-light mt-5">
-            Copyright © 2024 Robert J. Spano
+            Copyright © 2024 - {new Date().getFullYear()} Robert J. Spano
           </p>
         </div>
       </HeroHighlight>
