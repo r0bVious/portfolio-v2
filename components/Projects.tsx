@@ -237,7 +237,6 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                         animation="scale"
                         arrow={true}
                         arrowSize="big"
-                        key={index}
                       >
                         <div className="border border-white/[0.2] rounded-full bg-black size-10 flex justify-center items-center">
                           <img
