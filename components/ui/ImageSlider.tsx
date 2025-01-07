@@ -51,7 +51,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         </div>
       )}
       <img
-        src={pics[currentPic].img}
+        src={`media/pics/${pics[currentPic].img}`}
         alt={pics[currentPic].imgAlt}
         className={`object-contain object-top transition-opacity duration-500 ${
           pics[currentPic].imgClassName

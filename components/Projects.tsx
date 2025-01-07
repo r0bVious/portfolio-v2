@@ -107,7 +107,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                     clickedProjectID === id ? "lg:scale-125 z-10" : null
                   }`}
                   onClick={() => handleClick(id)}
-                  style={{ backgroundImage: `url(${img})` }}
+                  style={{ backgroundImage: `url(media/projects/${img})` }}
                 >
                   <div
                     className={`absolute inset-0 bg-black transition-colors duration-300 ${
@@ -241,7 +241,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                       >
                         <div className="border border-white/[0.2] rounded-full bg-black size-10 flex justify-center items-center">
                           <img
-                            src={`/media/logos/${icon}`}
+                            src={`media/logos/${icon}`}
                             alt={icon}
                             className="p-2"
                           />
