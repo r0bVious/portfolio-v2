@@ -43,27 +43,27 @@ export const projects = [
   //   demoLink: "https://r0bvious.github.io/frogCoin/",
   //   date: "2023-11-25",
   // },
-  {
-    id: 2,
-    title: "Tic-Tac-Toe",
-    description: {
-      eng: 'Tic-Tac-Toe is a classic mini-project. This was an in-class exercise that had "bonus" objectives including a turn tracker and conditional visual feedback.',
-      kor: '틱택토(Tic-Tac-Toe)는 전형적인 미니 프로젝트입니다. "보너스" 목표를 가진 턴 트래커와 조건부 시각 피드백을 포함한 수업 중 연습한 작업물 입니다.',
-    },
-    skills: {
-      eng: [
-        "Functional programming",
-        "Developmental agility",
-        "Basic game logic",
-      ],
-      kor: ["함수형 프로그래밍", "개발 민첩성", "게임 로직"],
-    },
-    img: "tictactoe.png",
-    iconLists: ["HTML5.svg", "CSS3.svg", "Javascript.svg"],
-    gitLink: "https://github.com/r0bVious/Tic-Tac-Toe",
-    demoLink: "https://r0bvious.github.io/Tic-Tac-Toe/",
-    date: "2023-12-01",
-  },
+  // {
+  //   id: 2,
+  //   title: "Tic-Tac-Toe",
+  //   description: {
+  //     eng: 'Tic-Tac-Toe is a classic mini-project. This was an in-class exercise that had "bonus" objectives including a turn tracker and conditional visual feedback.',
+  //     kor: '틱택토(Tic-Tac-Toe)는 전형적인 미니 프로젝트입니다. "보너스" 목표를 가진 턴 트래커와 조건부 시각 피드백을 포함한 수업 중 연습한 작업물 입니다.',
+  //   },
+  //   skills: {
+  //     eng: [
+  //       "Functional programming",
+  //       "Developmental agility",
+  //       "Basic game logic",
+  //     ],
+  //     kor: ["함수형 프로그래밍", "개발 민첩성", "게임 로직"],
+  //   },
+  //   img: "tictactoe.png",
+  //   iconLists: ["HTML5.svg", "CSS3.svg", "Javascript.svg"],
+  //   gitLink: "https://github.com/r0bVious/Tic-Tac-Toe",
+  //   demoLink: "https://r0bvious.github.io/Tic-Tac-Toe/",
+  //   date: "2023-12-01",
+  // },
   {
     id: 3,
     title: "FlagMatch",
@@ -192,6 +192,94 @@ export const projects = [
     gitLink: "https://github.com/r0bVious/reactjam-taptaptaphouse",
     demoLink: "https://robertjspano.com/taptaptaphouse",
     date: "2024-10-07",
+  },
+  {
+    id: 8,
+    title: "Medical Tourism Site",
+    description: {
+      eng: "Hired by a local doctor with deep connections in the plastic surgery industry, I made this site to help attract clients from abroad and avoid the high fees of the medical tourism industry here in Korea.",
+      kor: "국내 성형외과 업계와 깊은 인연을 가진 지역 의사에게 고용되어, 해당 사이트를 제작하게 되었습니다.",
+    },
+    skills: {
+      eng: [
+        "Paypal integration",
+        "Multi-step form handling",
+        "Late feature implementation",
+        "Cloudflare Workers and D1 DB integration",
+      ],
+      kor: [
+        "Paypal 통합",
+        "다단계 폼 처리",
+        "늦은 기능 구현",
+        "Cloudflare Workers와 D1 DB 통합",
+      ],
+    },
+    img: "aiexplore.png",
+    iconLists: ["Typescript.svg", "React.svg", "TailwindCSS.svg", "SQL.svg"],
+    // gitLink: ""
+    demoLink: "https://aiexplore.kr/",
+    date: "2025-01-01",
+  },
+  {
+    id: 9,
+    title: "The 'Kid' Project",
+    description: {
+      eng: "Originally intending on working on my data-manipulation and data-visualization skills, I started building a simple project that would allow me to collect home-grown data on my daughter's mood and condition. One thing led to the next, and now it's a full-stack app with a lot of developmental potential. WIP, with a data-visualization sister project in the works.",
+      kor: "데이터 조작 및 데이터 시각화 기술을 연마하기 위해 처음에는 간단한 프로젝트를 시작했습니다. 이 프로젝트는 내 딸의 기분과 상태에 대한 집에서 자란 데이터를 수집할 수 있도록 했습니다. 하나의 일이 다른 일을 이끌어 내고 있고, 이제는 많은 개발 잠재력을 가진 풀스택 앱이 되었습니다. 데이터 시각화 형제 프로젝트도 진행 중입니다.",
+    },
+    skills: {
+      eng: [
+        "oAuth",
+        "Database design",
+        "Vercel deployment",
+        "State management",
+      ],
+      kor: [
+        "oAuth",
+        "데이터베이스 설계",
+        "Vercel 배포-디폴로이먼트",
+        "스테이트트 관리",
+      ],
+    },
+    img: "thekidproject.png",
+    iconLists: ["Typescript.svg", "Nextjs.svg", "TailwindCSS.svg", "SQL.svg"],
+    gitLink: "https://github.com/r0bVious/thelunaproject",
+    demoLink: "https://thelunaproject.vercel.app/",
+    date: "2025-04-11",
+  },
+  {
+    id: 10,
+    title: "Current Projects",
+    description: {
+      eng: "I am currenly employed and working on two separate team projects - a local start-up here in Seoul where I am a full-stack developer working on an app that manages promotions and customer benefits for local markets in SE-Asia (React, Typescript, Tailwind, Node.js, Express, MySQL). The second is with a remote team where I am migrating an old Ruby on Rails inventory system to a new version with Vue.js components (Ruby on Rails 8, Vue.js, Tailwind).",
+      kor: "저는 현재 재직 중이며 두 개의 팀 프로젝트를 동시에 진행하고 있습니다. 첫 번째는 서울에 있는 한 로컬 스타트업에서 풀스택 개발자로 근무하며, 동남아시아 지역의 로컬 마켓을 대상으로 프로모션과 고객 혜택을 관리하는 앱을 개발하고 있습니다 (사용 기술: React, TypeScript, Tailwind, Node.js, Express, MySQL). 두 번째 프로젝트는 해외 원격 팀과 함께 진행 중이며, 기존 Ruby on Rails 기반의 재고 관리 시스템을 최신 버전으로 마이그레이션하면서 Vue.js 컴포넌트를 통합하고 있습니다 (사용 기술: Ruby on Rails 8, Vue.js, Tailwind).",
+    },
+    skills: {
+      eng: [
+        "Pair-coding and code reviewing",
+        "Better readability and structure",
+        "Google Maps and Firebase Push Messaging",
+        "Custom hook implemenation",
+      ],
+      kor: [
+        "페어 프로그래밍 및 코드 리뷰",
+        "가독성과 구조 개선",
+        "Google Maps 및 Firebase 푸시 메시징",
+        "커스텀 훅 구현",
+      ],
+    },
+    img: "teamwork.png",
+    iconLists: [
+      "Typescript.svg",
+      "React.svg",
+      "Nodejs.svg",
+      "SQL.svg",
+      "Rails.png",
+      "Vue.png",
+    ],
+    gitLink: null,
+    demoLink: null,
+    date: "2025-05-01",
   },
 ];
 

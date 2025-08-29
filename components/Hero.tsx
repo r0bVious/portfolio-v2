@@ -39,7 +39,7 @@ const Hero = () => {
   return (
     <section className="w-full overflow-hidden">
       <HeroHighlight className="h-dvh flex lg:flex-row flex-col justify-between">
-        <div className="lg:h-full flex flex-col justify-center align-middle px-1 lg:px-10 lg:text-left lg:gap-8 gap-4 pt-4 lg:pt-0 lg:max-w-[50%] flex-grow ml-4">
+        <div className="lg:h-full flex flex-col justify-center align-middle lg:px-10 lg:text-left lg:gap-8 gap-4 pt-4 lg:pt-0 lg:max-w-[50%] flex-grow px-4">
           <div className="lg:text-3xl text-2xl">
             <h1 lang="en">Hello, I&apos;m Rob.</h1>
             <h1 className="none" lang="ko">
@@ -47,43 +47,41 @@ const Hero = () => {
             </h1>
           </div>
           <div className="lg:text-xl text-sm">
-            <p lang="en">
-              I&apos;m a growing developer with{" "}
-              <span className="text-customBlue">marketing</span> and{" "}
-              <span className="text-customBlue">international relations</span>{" "}
-              experience in a Seoul start-up!
+            <p lang="en" className="indent-8 text-justify">
+              I&apos;m a quickly growing web developer with marketing and
+              international relations experience in both Seoul start-ups and
+              remote international teams!
             </p>
-            <p className="none" lang="ko">
-              저는 서울 스타트업에서 국내 및 국제{" "}
-              <span className="text-customBlue">마케팅</span> 경력을 갖고 있는
-              신입 <span className="text-customBlue">개발자</span>입니다!
+            <p className="none indent-8 text-justify" lang="ko">
+              저는 서울의 스타트업과 해외 원격 팀에서 마케팅 경력을 갖고 있는
+              신입 개발자입니다!
             </p>
           </div>
-          <div className="text-sm lg:text-base">
-            <p lang="en">
-              I am diving deep into in-demand frameworks and libraries like{" "}
-              <span className="text-2xl text-customBlue font-extrabold">
-                React, Next.js, Chakra UI,
+          <div className="text-sm lg:text-xl">
+            <p lang="en" className="indent-8 text-justify">
+              I am staying busy working on multiple projects using in-demand
+              frameworks and libraries like{" "}
+              <span className="lg:text-2xl text-customBlue font-extrabold">
+                React, Next.js, Ruby on Rails,
               </span>{" "}
               and{" "}
-              <span className="text-2xl text-customBlue font-extrabold">
+              <span className="lg:text-2xl text-customBlue font-extrabold">
                 Tailwind CSS
               </span>{" "}
-              so that I'm ready for whatever the project needs!
+              - I'm always ready for whatever your project needs!
             </p>
-            <p className="none" lang="ko">
-              개발에 필요한
-              <span className="text-2xl text-customBlue font-extrabold">
-                {" "}
-                React, Next.js, Chakra UI
+            <p className="none indent-8 text-justify" lang="ko">
+              현재{" "}
+              <span className="lg:text-2xl text-customBlue font-extrabold">
+                React, Next.js, Ruby on Rails,
               </span>{" "}
-              및
-              <span className="text-2xl text-customBlue font-extrabold">
-                {" "}
+              그리고{" "}
+              <span className="lg:text-2xl text-customBlue font-extrabold">
                 Tailwind CSS
               </span>
-              와 같은 주문형 프레임워크 및 라이브러리 등 모든 것에 대응이
-              가능합니다.
+              와 같은 수요가 높은 프레임워크와 라이브러리를 활용하여 다양한
+              프로젝트를 진행하고 있습니다. 귀하의 프로젝트가 어떤 것이든,
+              언제든 준비되어 있습니다!
             </p>
           </div>
           <a href="#projects" className="self-center">

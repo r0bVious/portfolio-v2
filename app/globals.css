@@ -94,9 +94,9 @@ html {
   .project-container::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 5%;
-    background-color: var(--customGranite);
+    background-color: #2a2a2a;
     z-index: -1;
   }
 
@@ -104,11 +104,12 @@ html {
     content: "";
     position: absolute;
     right: 0;
+    left: unset;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-right: 30px solid var(--customGranite);
+    border-right: none;
     border-bottom: 65px solid transparent;
     border-top: 65px solid transparent;
     z-index: -1;
@@ -120,8 +121,8 @@ html {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 0.5rem;
-    height: 5rem;
+    width: 0;
+    height: 0;
     background-color: var(--customGranite);
     z-index: -1;
   }

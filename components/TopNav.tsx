@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Modal from "./Modal";
 
 type TopNavProps = {
   language: string;
@@ -8,12 +7,6 @@ type TopNavProps = {
 };
 
 const TopNav: React.FC<TopNavProps> = ({ language, setLanguage }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   const changeLanguage = () => {
     document
       .querySelectorAll("html [lang='en'], html [lang='ko']")
@@ -32,15 +25,16 @@ const TopNav: React.FC<TopNavProps> = ({ language, setLanguage }) => {
       <nav className="sticky top-0 lg:relative w-full bg-customBlue flex justify-between min-h-10 items-center font-extrabold z-50">
         <ul className="flex justify-evenly w-full">
           <li>
-            <button
+            <a
               className="hover:text-customBlack transition-colors duration-200"
-              onClick={toggleModal}
+              href="/media/Robert_J_Spano_Web_Developer_Resume.pdf"
+              target="_blank"
             >
               <p lang="en">-Get Resume-</p>
               <p lang="ko" className="none">
                 -이력서-
               </p>
-            </button>
+            </a>
           </li>
           <li>
             <a href="#contact" className="hover:text-customBlack">
@@ -70,7 +64,6 @@ const TopNav: React.FC<TopNavProps> = ({ language, setLanguage }) => {
           </div>
         </button>
       </nav>
-      <Modal isOpen={isModalOpen} onClose={toggleModal} />
     </>
   );
 };

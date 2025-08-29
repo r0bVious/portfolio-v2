@@ -68,7 +68,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
   return (
     <section
       id="projects"
-      className={`w-screen border-y-2 py-10 border-customBlue border-dotted bg-gradient-to-b from-customBlue/[0.2] via-customBlack to-customBlue/[0.2] ${rubik.className}`}
+      className={`w-screen border-y-2 py-10 px-2 lg:px-0 border-customBlue border-dotted bg-customBlue/15 ${rubik.className}`}
     >
       <h1 lang="en" className="text-center lg:pb-5">
         some of my <span className="text-customBlue">project timeline</span>
@@ -76,7 +76,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
       <h1 lang="ko" className="none text-center lg:pb-5">
         개발 프로젝트 <span className="text-customBlue">성장과정</span>
       </h1>
-      <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center lg:gap-y-20 px-5 lg:pt-5">
+      <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center lg:gap-y-20 lg:pt-5">
         <div className="relative arrowhead min-w-[10%] flex justify-center mt-10 lg:m-0">
           <p lang="en">Present</p>
           <p lang="ko" className="none whitespace-nowrap">
@@ -129,7 +129,9 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                       <div className="indent-5 lg:text-sm px-2 lg:font-bold pt-5 lg:pt-0">
                         <p
                           lang="en"
-                          className={`${language === "en" ? "none" : null}`}
+                          className={`${
+                            language === "en" ? "none" : null
+                          } text-justify`}
                         >
                           <ReactMarkdown
                             components={{
@@ -153,7 +155,9 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                         </p>
                         <p
                           lang="ko"
-                          className={`${language === "en" ? null : "none"}`}
+                          className={`${
+                            language === "en" ? null : "none"
+                          } text-justify`}
                         >
                           <ReactMarkdown
                             components={{
@@ -202,22 +206,31 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                         ))}
                       </ul>
                       <div className="flex justify-evenly text-xs w-full z-10 gap-10 px-10">
-                        <a
-                          href={gitLink}
-                          target="_blank"
-                          className="relative bg-customBlack border border-customBlue hover:bg-customBlue rounded lg:h-16 lg:w-24 w-full h-20 flex justify-center items-center overflow-hidden"
-                        >
-                          Github
-                          <FaGithub className="absolute lg:size-14 size-32 mt-2 lg:ml-8 ml-12 opacity-20" />
-                        </a>
-                        <a
-                          href={demoLink}
-                          target="_blank"
-                          className="relative bg-customBlack border border-customBlue hover:bg-customBlue rounded lg:h-16 lg:w-24 w-full h-20 flex justify-center items-center overflow-hidden"
-                        >
-                          Demo
-                          <FaBolt className="absolute lg:size-14 size-32 mt-5 lg:ml-12 ml-16 opacity-20" />
-                        </a>
+                        {gitLink ? (
+                          <a
+                            href={gitLink}
+                            target="_blank"
+                            className="relative bg-customBlack border border-customBlue hover:bg-customBlue rounded lg:h-16 lg:w-24 w-full h-20 flex justify-center items-center overflow-hidden"
+                          >
+                            Github
+                            <FaGithub className="absolute lg:size-14 size-32 mt-2 lg:ml-8 ml-12 opacity-20" />
+                          </a>
+                        ) : null}
+                        {demoLink ? (
+                          <a
+                            href={demoLink}
+                            target="_blank"
+                            className="relative bg-customBlack border border-customBlue hover:bg-customBlue rounded lg:h-16 lg:w-24 w-full h-20 flex justify-center items-center overflow-hidden"
+                          >
+                            Demo
+                            <FaBolt className="absolute lg:size-14 size-32 mt-5 lg:ml-12 ml-16 opacity-20" />
+                          </a>
+                        ) : null}
+                        {!gitLink && !demoLink ? (
+                          <span className="italic text-[0.6rem]">
+                            No demo available for current company work.
+                          </span>
+                        ) : null}
                       </div>
                     </div>
                   ) : null}
@@ -231,7 +244,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                     </span>
                     {iconLists.map((icon, index) => (
                       <Tooltip
-                        title={icon.replace(".svg", "")}
+                        title={icon.replace(/\.(svg|png)$/, "")}
                         position="bottom"
                         trigger="mouseenter"
                         animation="scale"
